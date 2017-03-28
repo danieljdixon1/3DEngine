@@ -9,13 +9,15 @@ public class Main {
 	//jump: space
 
 	//settings
-	static int FPS=90;
+	private static int FPS=90;
 
-	static Camera displayobj = new Camera();
-	static long frames;
+	public static Camera displayobj = new Camera();
+	private static long frames;
+	public static boolean Escape;
+	private static JFrame fram;
 
 	public static void main(String[] args) {
-		JFrame fram = new JFrame("");
+		fram = new JFrame("");
 		fram.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		fram.addKeyListener(new KeyEvents());
 		fram.addMouseListener(new MouseEvents());
@@ -43,7 +45,7 @@ public class Main {
 		long totalnano=0;
 		long timepass=0;
 		
-		while (true){
+		while (!Escape){
 
 			lastnano=nanocheck;
 			nanocheck = System.nanoTime();
@@ -67,6 +69,7 @@ public class Main {
 				//System.out.println("frame skip");
 			}
 		}
+		fram.dispose();
 	}
 
 	public static void step(){

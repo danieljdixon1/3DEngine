@@ -19,6 +19,9 @@ public class KeyEvents extends KeyAdapter  {
 		if (ch==KeyEvent.VK_SPACE){
 			Player.jump=true;
 		}
+		if (ch==KeyEvent.VK_ESCAPE){
+			Main.Escape=true;
+		}
 	}
 	public void keyReleased(KeyEvent event) {
 	    char ch = event.getKeyChar();
